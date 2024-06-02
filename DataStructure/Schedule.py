@@ -5,6 +5,17 @@ from Utils.constants import HARD_CONSTRAINT_PENALTY, SOFT_CONSTRAINT_PENALTY
 
 
 class Schedule:
+    """
+    Represents a schedule in the scheduling system.
+    
+    Attributes:
+        data (object): The data used to initialize the schedule.
+        classes (list): The list of classes in the schedule.
+        numbOfConflicts (int): The number of conflicts in the schedule.
+        fitness (float): The fitness score of the schedule.
+        classNumb (int): The number of classes.
+        isFitnessChanged (bool): Flag indicating if the fitness has changed.
+    """
     def __init__(self, data):
         self.data = data
         self.classes = []
@@ -27,7 +38,12 @@ class Schedule:
         return self.fitness
 
     def initialize(self):
-        # Initialize the schedule with random classes
+        """
+        Initializes the schedule with random classes, assigning random timeslots, rooms, and professors.
+        
+        Returns:
+            Schedule: The initialized schedule with randomly assigned classes.
+        """
         departments = self.data.get_departments()
         for department in departments:
             courses = department.get_courses()
