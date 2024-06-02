@@ -64,7 +64,7 @@ else:
     print("No valid schedule found.")
 
 """""""""
-The algorithm continues to evolve the population until it finds a schedule with a fitness of 1.0.
+The algorithm continues to evolve the population until it finds a schedule with a fitness of 0.
  
 This means that the algorithm will keep running indefinitely until it reaches an optimal solution 
 (a schedule with no conflicts).
