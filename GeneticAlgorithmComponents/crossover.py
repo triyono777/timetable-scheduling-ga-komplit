@@ -2,6 +2,16 @@ from DataStructure.Schedule import Schedule
 import random as rnd
 
 def single_point_crossover(schedule1, schedule2):
+    """
+    Performs single-point crossover on two schedules.
+    
+    Parameters:
+        schedule1 (Schedule): The first parent schedule.
+        schedule2 (Schedule): The second parent schedule.
+    
+    Returns:
+        Schedule: A new schedule created by crossing over the two parent schedules.
+    """
     data = schedule1.data
     crossover_schedule = Schedule(data).initialize()
     parent1_classes = schedule1.get_classes()
@@ -23,6 +33,16 @@ def single_point_crossover(schedule1, schedule2):
 
 
 def cycle_crossover(schedule1, schedule2):
+    """
+    Performs cycle crossover on two schedules.
+    
+    Parameters:
+        schedule1 (Schedule): The first parent schedule.
+        schedule2 (Schedule): The second parent schedule.
+    
+    Returns:
+        Schedule: A new schedule created by crossing over the two parent schedules using cycles.
+    """
     data = schedule1.data
     crossover_schedule = Schedule(data).initialize()
     parent1_classes = schedule1.get_classes()
@@ -68,6 +88,16 @@ def cycle_crossover(schedule1, schedule2):
 
 
 def uniform_crossover(schedule1, schedule2):
+     """
+    Performs uniform crossover on two schedules.
+    
+    Parameters:
+        schedule1 (Schedule): The first parent schedule.
+        schedule2 (Schedule): The second parent schedule.
+    
+    Returns:
+        Schedule: A new schedule created by randomly selecting class details from either parent.
+    """
     data = schedule1.data
     crossover_schedule = Schedule(data).initialize()
     parent1_classes = schedule1.get_classes()
