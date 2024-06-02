@@ -1,4 +1,15 @@
 class Class:
+    """
+    Represents a class in the scheduling system.
+    
+    Attributes:
+        id (int): The unique identifier for the class.
+        department (Department): The department offering the class.
+        course (Course): The course being taught in the class.
+        professors (list): The list of possible professors for the class (initially None).
+        timeslots (list): The list of possible timeslots for the class (initially None).
+        room (Room): The room assigned to the class (initially None).
+    """
     def __init__(self, id, department, course):
         self.id = id
         self.department = department
