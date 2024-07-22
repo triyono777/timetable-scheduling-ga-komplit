@@ -88,16 +88,16 @@ def cycle_crossover(schedule1, schedule2):
 
 
 def uniform_crossover(schedule1, schedule2):
-     """
-    Performs uniform crossover on two schedules.
+    #  """
+    # Performs uniform crossover on two schedules.
     
-    Parameters:
-        schedule1 (Schedule): The first parent schedule.
-        schedule2 (Schedule): The second parent schedule.
+    # Parameters:
+    #     schedule1 (Schedule): The first parent schedule.
+    #     schedule2 (Schedule): The second parent schedule.
     
-    Returns:
-        Schedule: A new schedule created by randomly selecting class details from either parent.
-    """
+    # Returns:
+    #     Schedule: A new schedule created by randomly selecting class details from either parent.
+    # """
     data = schedule1.data
     crossover_schedule = Schedule(data).initialize()
     parent1_classes = schedule1.get_classes()

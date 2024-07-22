@@ -14,14 +14,14 @@ class GeneticAlgorithm:
         selection_func (function): Function to select a schedule from the population.
     """
     def __init__(self, mutation_func, crossover_func, selection_func):
-         """
-        Initializes the genetic algorithm with the given mutation, crossover, and selection functions.
+        #  """
+        # Initializes the genetic algorithm with the given mutation, crossover, and selection functions.
         
-        Parameters:
-            mutation_func (function): Function to mutate a schedule.
-            crossover_func (function): Function to perform crossover between two schedules.
-            selection_func (function): Function to select a schedule from the population.
-        """
+        # Parameters:
+        #     mutation_func (function): Function to mutate a schedule.
+        #     crossover_func (function): Function to perform crossover between two schedules.
+        #     selection_func (function): Function to select a schedule from the population.
+        # """
         self.mutation_func = mutation_func
         self.crossover_func = crossover_func
         self.selection_func = selection_func
