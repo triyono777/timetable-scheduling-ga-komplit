@@ -38,7 +38,7 @@ class Data:
                 TimeSlot("T11", "Kamis 10:30 - 13.00"),
                 TimeSlot("T12", "Kamis 13.30 - 16.00"),
                 TimeSlot("T13", "Jumat 08:00 - 10:30"),
-                TimeSlot("T15", "Jumat 13.30 - 16.00"),
+                TimeSlot("T14", "Jumat 13.30 - 16.00"),
 
 
         ]
