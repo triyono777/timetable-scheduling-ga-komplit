@@ -9,19 +9,19 @@ from DataStructure.Timeslot import TimeSlot
 class Data:
     def __init__(self):
         self.rooms = [
-            Room("R1", 40),
-            Room("R2", 40),
-            Room("R3", 40),
-            Room("R4", 40),
-            Room("R5", 40),
-            Room("R6", 40),
-            Room("R7", 40),
-            Room("R8", 40),
-            Room("R9", 40),
-            Room("R10", 40),
-            Room("R11", 40),
-            Room("R12", 40),
-            Room("R13", 40),
+            Room("R1"),
+            Room("R2"),
+            Room("R3"),
+            Room("R4"),
+            Room("R5"),
+            Room("R6"),
+            Room("R7"),
+            Room("R8"),
+            Room("R9"),
+            Room("R10"),
+            Room("R11"),
+            Room("Lab 1", True),
+            Room("Lab 2", True),
 
         ]
         self.timeslots = [
@@ -49,16 +49,16 @@ class Data:
             Professor("P4", "Nibras")
         ]
         self.courses = [
-            Course("C1", "DS101", [self.professors[0], self.professors[1]], 40, ["T2", "T1"], ["R12"]),
-            Course("C2", "DS102", [self.professors[0], self.professors[1], self.professors[3]], 40, ["T2", "T3"], ["R13"]),
-            Course("C3", "ML201", [self.professors[2], self.professors[3]], 40, ["T3", "T4"], ["R7", "R13"]),
-            Course("C4", "ML202", [self.professors[2], self.professors[3]], 40, ["T3", "T4", "T5"]),
-            Course("C5", "AI301", [self.professors[0], self.professors[3]], 40),
-            Course("C6", "BD401", [self.professors[1], self.professors[2]], 40, ["T1", "T6"], ["R7"]),
-            Course("C7", "BD402", [self.professors[1], self.professors[2]], 40),
-            Course("C8", "NLP101", [self.professors[2], self.professors[3]], 40, ["T3", "T5"], ["R10"]),
-            Course("C9", "CV101", [self.professors[1], self.professors[2]], 40),
-            Course("C10", "DS201", [self.professors[0], self.professors[1]], 40, ["T2", "T4", "T5"], ["R13"])
+            Course("C1", "DS101", [self.professors[0], self.professors[1]], True, ["T2", "T1"], ["R12"]),
+            Course("C2", "DS102", [self.professors[0], self.professors[1], self.professors[3]], True, ["T2", "T3"], ["Lab 1"]),
+            Course("C3", "ML201", [self.professors[2], self.professors[3]], True, ["T3", "T4"], ["R7", "Lab 1"]),
+            Course("C4", "ML202", [self.professors[2], self.professors[3]],False, ["T3", "T4", "T5"]),
+            Course("C5", "AI301", [self.professors[0], self.professors[3]],False),
+            Course("C6", "BD401", [self.professors[1], self.professors[2]],False, ["T1", "T6"], ["R7"]),
+            Course("C7", "BD402", [self.professors[1], self.professors[2]],False),
+            Course("C8", "NLP101", [self.professors[2], self.professors[3]],False, ["T3", "T5"], ["R10"]),
+            Course("C9", "CV101", [self.professors[1], self.professors[2]],True),
+            Course("C10", "DS201", [self.professors[0], self.professors[1]],True, ["T2", "T4", "T5"], ["Lab 1"])
         ]
         self.departments = [
             Department("Data Science", [self.courses[0], self.courses[1], self.courses[9]]),

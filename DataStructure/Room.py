@@ -4,14 +4,14 @@ class Room:
     
     Attributes:
         number (str): The room number or identifier.
-        capacity (int): The seating capacity of the room.
+        isLab (bool): The tipe lab.
     """
-    def __init__(self, number, capacity):
+    def __init__(self, number, isLab = False):
         self.number = number
-        self.capacity = capacity
+        self.isLab = isLab
 
     def get_number(self):
         return self.number
 
-    def get_capacity(self):
-        return self.capacity
+    def get_isLab(self):
+        return self.isLab

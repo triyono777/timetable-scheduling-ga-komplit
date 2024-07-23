@@ -91,7 +91,7 @@ class Schedule:
         # Hard constraints
         for i in range(0, len(classes)):
             # Check if room capacity exceeds the number of students
-            if classes[i].get_room().get_capacity() < classes[i].get_course().get_max_number_of_students():
+            if classes[i].get_room().get_isLab() != classes[i].get_course().get_needLab():
                 hard_constraint_violations += 1
 
             for j in range(i + 1, len(classes)):

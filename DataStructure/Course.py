@@ -6,15 +6,15 @@ class Course:
         number (str): The unique number identifier for the course.
         name (str): The name of the course.
         professors (list): The list of professors who can teach the course.
-        max_number_of_students (int): The maximum number of students that can enroll in the course.
+        needLab (bool): course need lab or not.
         preferred_timeslots (list): The list of preferred timeslots for the course (default is an empty list).
         preferred_rooms (list): The list of preferred rooms for the course (default is an empty list).
     """
-    def __init__(self, number, name, professors, max_number_of_students, preferred_timeslots=[], preferred_rooms=[]):
+    def __init__(self, number, name, professors, needLab, preferred_timeslots=[], preferred_rooms=[]):
         self.number = number
         self.name = name
         self.professors = professors
-        self.max_number_of_students = max_number_of_students
+        self.needLab = needLab
         self.preferred_timeslots = preferred_timeslots
         self.preferred_rooms = preferred_rooms
 
@@ -27,8 +27,8 @@ class Course:
     def get_professors(self):
         return self.professors
 
-    def get_max_number_of_students(self):
-        return self.max_number_of_students
+    def get_needLab(self):
+        return self.needLab
 
     def get_preferred_timeslots(self):
         return self.preferred_timeslots

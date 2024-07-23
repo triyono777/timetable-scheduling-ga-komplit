@@ -4,15 +4,15 @@ import numpy as np
 from scipy.stats import sem, t
 from GeneticAlgorithmComponents.crossover import single_point_crossover, uniform_crossover
 from GeneticAlgorithmComponents.mutation import binary_mutation, swap_mutation
-from GeneticAlgorithmComponents.selection import tournament_selection, ranking_selection
+from GeneticAlgorithmComponents.selection import tournament_selection, ranking_selection, truncation_selection
 from data import Data
 from GeneticAlgorithmComponents.genetic_algorithm import GeneticAlgorithm, Population
 from Utils.constants import POPULATION_SIZE, MAX_GENERATIONS, TRUNCATION_SIZE
 
 # Define method combinations
-crossover_methods = [single_point_crossover, uniform_crossover]
-mutation_methods = [binary_mutation, swap_mutation]
-selection_methods = [tournament_selection, ranking_selection]
+crossover_methods = [ uniform_crossover]
+mutation_methods = [ swap_mutation]
+selection_methods = [ranking_selection]
 
 # Number of runs for each combination
 NUM_RUNS = 30

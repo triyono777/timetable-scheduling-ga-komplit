@@ -1,6 +1,6 @@
 import random as rnd
 from DataStructure.Population import Population
-from Utils.constants import TOURNAMENT_SELECTION_SIZE, POPULATION_SIZE
+from Utils.constants import TOURNAMENT_SELECTION_SIZE, POPULATION_SIZE,TRUNCATION_SIZE
 
 def tournament_selection(population):
     """
@@ -38,3 +38,25 @@ def ranking_selection(population):
         current += (POPULATION_SIZE - i)
         if current > pick:
             return schedule
+
+def truncation_selection(population):
+    """
+    Selects a schedule from the population using truncation selection.
+    
+    Parameters:
+        population (Population): The population from which to select a schedule.
+        truncation_size (int): The number of top schedules to consider for selection.
+    
+    Returns:
+        Schedule: The selected schedule based on truncation selection.
+    """
+    # Sort schedules based on fitness in descending order
+    ranked_schedules = sorted(population.get_schedules(), key=lambda x: x.get_fitness(), reverse=True)
+    
+    # Select the top 'truncation_size' schedules
+    top_schedules = ranked_schedules[:TRUNCATION_SIZE]
+    
+    # Randomly pick one of the top schedules
+    selected_schedule = rnd.choice(top_schedules)
+    
+    return selected_schedule
