@@ -8,7 +8,7 @@ import csv
 
 from GeneticAlgorithmComponents.crossover import cycle_crossover, single_point_crossover, uniform_crossover
 from GeneticAlgorithmComponents.mutation import binary_mutation, swap_mutation
-from GeneticAlgorithmComponents.selection import tournament_selection, ranking_selection
+from GeneticAlgorithmComponents.selection import tournament_selection, ranking_selection,truncation_selection
 from data import Data
 from GeneticAlgorithmComponents.genetic_algorithm import GeneticAlgorithm, Population
 from Utils.constants import POPULATION_SIZE, MAX_GENERATIONS
@@ -18,10 +18,10 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 # Define method combinations
 # crossover_methods = [single_point_crossover, cycle_crossover, uniform_crossover]
-crossover_methods = [ cycle_crossover]
+crossover_methods = [ single_point_crossover]
 # mutation_methods = [binary_mutation, swap_mutation]
-mutation_methods = [binary_mutation]
-# selection_methods = [tournament_selection, ranking_selection]
+mutation_methods = [swap_mutation]
+# selection_methods = [tournament_selection, ranking_selection,truncation_selection]
 selection_methods = [tournament_selection]
 
 # Number of runs for each combination
@@ -64,7 +64,8 @@ def plot_results(results):
     plt.title('Average Fitness per Generation for Different Method Combinations')
     plt.legend()
     plt.grid(True)
-    plt.show()
+    plt.savefig("hasil_gambar/"+label)
+    # plt.show()
 
 def save_results(results, filename='experiment_results.csv'):
     with open(filename, mode='w', newline='') as file:
